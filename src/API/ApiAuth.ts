@@ -5,9 +5,9 @@ export const loginAPI = async (data: loginType) => {
 
     return await fetch(`${API_URL}login`, {
         method: 'POST', 
-        body: JSON.stringify(data), // Тело запроса в JSON-формате
+        body: JSON.stringify(data), 
         headers: {
-          // Добавляем необходимые заголовки
+         
           'Content-type': 'application/json; charset=UTF-8',
         },
      
@@ -18,9 +18,9 @@ export const authAPI = async (data: loginType) => {
   
     return await fetch(`${API_URL}auth`, {
         method: 'POST', 
-        body: JSON.stringify(data), // Тело запроса в JSON-формате
+        body: JSON.stringify(data),
         headers: {
-          // Добавляем необходимые заголовки
+         
           'Content-type': 'application/json; charset=UTF-8',
         },
      
