@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Layout, theme } from 'antd';
+import AppRoutes from './components/routes/Routes';
+import './index.css'
+import { AppStateType, useTypedDispatch, useTypedSelector } from './redux/reduxStore';
+import { actions } from './redux/reducers/authReducer';
+import FooterComponent from './components/footer/FooterComponent';
+import HeaderComponent from './components/header/HeaderComponent';
+const { Content } = Layout;
 
-function App() {
+const App: React.FC = () => {
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
+
+
+  const {user} = useTypedSelector((state: AppStateType) => state.auth)
+ 
+  useEffect(() => {
+    if (!!localStorage.getItem("user"))  {
+      let loginUser = JSON.parse(localStorage.getItem("user") || '')
+      dispatch(actions.loginUser(loginUser))
+    }
+
+}, [])
+
+
+  const dispatch = useTypedDispatch()
+
+  const logOut = () => {
+    localStorage.clear()
+    dispatch(actions.loginUser(''))
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout className="layout">
+      <HeaderComponent logOut={logOut} user={user} />
+      <Content style={{ padding: '0 20px' }}>
+        <div className="site-layout-content" style={{ background: colorBgContainer }}>
+
+          <AppRoutes />
+
+        </div>
+      </Content>
+     <FooterComponent />
+    </Layout>
   );
-}
+};
 
 export default App;

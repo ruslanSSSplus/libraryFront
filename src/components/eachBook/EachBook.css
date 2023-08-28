@@ -1,0 +1,142 @@
+@media screen and (max-width: 800px) {
+    .wrapper__book {
+        display: grid;
+        height: 700px;
+        text-align: center;
+        grid-template-rows: 300px 400px ;
+        
+        margin: 20px 0 20px 0;
+        -webkit-box-shadow: 0px 0px 10px 5px rgba(68, 157, 226, 0.23);
+        -moz-box-shadow: 0px 0px 10px 5px rgba(68, 157, 226, 0.23);
+        box-shadow: 0px 0px 10px 5px rgba(68, 157, 226, 0.23);
+     
+      }
+    
+      .wrapper__picture{
+        text-align: center
+      }
+      .picture{
+        margin-top: 10px;
+        max-width: calc(100% - 40px);
+        height: 100%;
+       
+        }
+    
+    .wrapper__info{
+        height: 400px;
+        display: grid;
+        grid-template-rows:  1fr 50px;
+        font-size: 20px;
+        padding: 20px;
+    }
+    
+    .wrapper__btns{
+        position: relative;
+    }
+    .edit{
+        position: absolute;
+        left: 0;
+    }
+    .delete{
+        position: absolute;
+        right:  0; 
+    }
+    .info{
+       
+        display: grid;
+        grid-template-columns:  2fr 3fr;
+    }
+    
+    .tags{
+      
+        height: 340px;
+        display: grid;
+        grid-template-rows:  1fr 1fr 1fr 1fr 1fr;
+    }
+    .tags__names{
+        text-align: left;
+        color: gray;
+    }
+  }
+  @media screen and (max-width: 800px) and (min-width: 500px)  {
+
+    .tags__names{
+        text-align: center;
+        color: gray;
+    }
+  }
+
+
+@media screen and (min-width: 800px) {
+    .wrapper__book {
+        display: grid;
+        height: 300px;
+        grid-template-columns: 200px 10fr ;
+        padding: 20px;
+        margin: 20px 0 20px 0;
+        -webkit-box-shadow: 0px 0px 10px 5px rgba(68, 157, 226, 0.23);
+        -moz-box-shadow: 0px 0px 10px 5px rgba(68, 157, 226, 0.23);
+        box-shadow: 0px 0px 10px 5px rgba(68, 157, 226, 0.23);
+        
+      }
+    
+      .wrapper__picture{
+        text-align: center
+      }
+      .picture{
+        background-color: red;
+        width: 100%;
+        height: 260px;
+       
+        }
+    
+    .wrapper__info{
+        height: 260px;
+    
+        display: grid;
+        grid-template-columns:  1fr 50px;
+        font-size: 20px;
+        padding: 20px;
+    }
+    
+    .wrapper__btns{
+        position: relative;
+    }
+    .edit{
+        position: absolute;
+        bottom: 0;
+    }
+    .info{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: grid;
+        grid-template-columns:  150px 1fr;
+    }
+    
+    .tags{
+        height: 200px;
+        display: grid;
+        grid-template-rows:  1fr 1fr 1fr 1fr 1fr;
+    }
+    .tags__names{
+       
+        color: gray;
+    }
+  }
+
+
+.edit{
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: solid 1px blue;
+    background-color: initial;
+}
+.delete{
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: solid 1px red;
+    background-color: initial;
+
+}

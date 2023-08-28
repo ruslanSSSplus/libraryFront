@@ -1,0 +1,19 @@
+.wrapper__form{
+    font-size: 20px;
+    padding: 20px;
+}
+
+.save__btn{
+    background-color: initial;
+    border-radius: 3px;
+    border: solid 1px blue;
+    color: blue;
+    font-size: 15px;
+    padding: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.input__field{
+    font-size: 20px;
+}

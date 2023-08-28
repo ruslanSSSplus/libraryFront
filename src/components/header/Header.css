@@ -1,0 +1,28 @@
+.links{
+    
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+  
+  .userName{
+    font-size: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: initial;
+    color: white;
+  }
+  
+  .auth{
+    margin-right: 10px;
+  }
+
+  
+  @media screen and (max-width: 500px) {
+    .wrapper__header{
+        padding: 0 10px 0 10px;
+      }
+  }
