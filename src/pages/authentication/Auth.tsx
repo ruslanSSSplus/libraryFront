@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import {useTypedDispatch} from "../../redux/reduxStore";
 import LoginForm from "../../components/loginForm/LoginForm";
 import { authThunkCreater } from "../../redux/reducers/authReducer";
-import { useNavigate } from "react-router-dom";
+
 
 interface AppProps {
     
@@ -22,7 +23,6 @@ interface handleProps {
 const Auth: React.FC<AppProps> = () => {
 
     const dispatch = useTypedDispatch()
- 
     const navigate = useNavigate();
 
     const [values, setValues] = useState({
@@ -51,7 +51,7 @@ const Auth: React.FC<AppProps> = () => {
 
     return (
 
-        <div>
+        <div className="login__page">
             <h1 className="login__text">
                 Зарегиструйтесь
             </h1>

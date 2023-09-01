@@ -29,11 +29,63 @@ interface handleProps {
 
 const BookForm: React.FC<AppProps> = ({handleSubmit, handleChange, values}) => {
 
-    
+
+
+    const inputs = [
+        {  
+            tag: 'Обложка',
+            placeholder: 'put url here',
+            name: "picture",
+            value: values.picture,
+        },
+        {  
+            tag: 'Название',
+            placeholder: 'Name of the book',
+            name: "name",
+            value: values.name,
+        },
+        {   
+            tag: 'Год',
+            placeholder: 'year',
+            name: "year",
+            value: values.year,
+        },
+        {   
+            tag: 'Жанр',
+            placeholder: 'genre',
+            name: "genre",
+            value: values.genre,
+        },
+        {   
+            tag: 'Автор',
+            placeholder: 'author',
+            name: "author",
+            value: values.author,
+        },  
+    ]
+
+
     return (
         <div>
                <form  onSubmit={handleSubmit} className="wrapper__form">
-                <div > Обложка
+
+
+                {inputs.map(item => 
+                <div > {item.tag}
+                    <Input
+                        type="text"
+                        placeholder={item.placeholder}
+                        name={item.name}
+                        value={item.value}
+                        autoComplete="off"
+                        onChange={handleChange}
+                        required
+                        className="input__field"
+                    />
+                </div>)}
+
+
+                {/* <div > Обложка
                     <Input
                         type="text"
                         placeholder="put url here"
@@ -94,7 +146,7 @@ const BookForm: React.FC<AppProps> = ({handleSubmit, handleChange, values}) => {
                         required
                         className="input__field"
                     />
-                </div>
+                </div> */}
 
             
                 <button type="submit" className="save__btn">

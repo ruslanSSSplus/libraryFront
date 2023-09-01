@@ -22,7 +22,6 @@ interface handleProps {
 const Login: React.FC<AppProps> = () => {
 
     const dispatch = useTypedDispatch()
-
     const navigate = useNavigate();
 
 
@@ -51,7 +50,7 @@ const Login: React.FC<AppProps> = () => {
     };
 
     return (
-        <div>
+        <div className="login__page">
              <h1 className="login__text">
                 Войдите
             </h1>

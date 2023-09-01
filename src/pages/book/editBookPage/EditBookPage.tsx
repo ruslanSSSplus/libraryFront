@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { useTypedDispatch} from "../../../redux/reduxStore";
-import { actions, editBookThunkCreater, targerThunkCreater } from "../../../redux/reducers/bookReducer";
+import { editBookThunkCreater, targerThunkCreater } from "../../../redux/reducers/bookReducer";
 import { bookType } from "../../../Types/Types";
 import BookForm from "../../../components/bookForm/BookForm";
 import { Button } from 'antd';
@@ -53,7 +53,7 @@ const EditBookPage: React.FC<AppProps> = ({book}) => {
     };
 
     const cancel = () => {
-        dispatch(actions.newTargetToEdit(0))
+        dispatch(targerThunkCreater(0))
       }
 
     return (

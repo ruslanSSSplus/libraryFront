@@ -1,20 +1,24 @@
 import React, { useEffect } from 'react';
 import { Layout, theme } from 'antd';
+
 import AppRoutes from './components/routes/Routes';
 import './index.css'
 import { AppStateType, useTypedDispatch, useTypedSelector } from './redux/reduxStore';
 import { actions } from './redux/reducers/authReducer';
 import FooterComponent from './components/footer/FooterComponent';
 import HeaderComponent from './components/header/HeaderComponent';
+
 const { Content } = Layout;
 
 const App: React.FC = () => {
+
+  const {user} = useTypedSelector((state: AppStateType) => state.auth)
+  const dispatch = useTypedDispatch()
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
 
-
-  const {user} = useTypedSelector((state: AppStateType) => state.auth)
  
   useEffect(() => {
     if (!!localStorage.getItem("user"))  {
@@ -22,10 +26,8 @@ const App: React.FC = () => {
       dispatch(actions.loginUser(loginUser))
     }
 
-}, [])
+  }, [])
 
-
-  const dispatch = useTypedDispatch()
 
   const logOut = () => {
     localStorage.clear()

@@ -15,13 +15,13 @@ interface AppProps {
 
 const EachBook: React.FC<AppProps> = ({book, deleteBook, newTargetFunc, targetToEdit}) => {
    
-    return ( targetToEdit === book.id ? <div><EditBookPage  book={book}/> </div> :
+    return ( targetToEdit === book.id ? 
+        <div> <EditBookPage  book={book}/> </div> :
         <div className="wrapper__book">
+
             <div className="wrapper__picture">
             <img src={book.picture} alt="pic" className="picture" />
             </div>
-              
-            
 
         <div className="wrapper__info"> 
            
